@@ -19,6 +19,12 @@ public class BuilderStreamTest {
         Stream<Integer> iteratedStream = Stream.iterate(30, n -> n + 2).limit(5);
         iteratedStream.forEach(str -> System.out.println("iterate : " + str));
 
+        System.out.println("case4. concat");
+        Stream<String> stream1 = Stream.of("Java", "Scala", "Groovy");
+        Stream<String> stream2 = Stream.of("Python", "Go", "Swift");
+        Stream<String> concat = Stream.concat(stream1, stream2);
+        concat.forEach(str -> System.out.println("concat : " + str));
+
     }
 
 }
